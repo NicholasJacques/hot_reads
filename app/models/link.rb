@@ -1,6 +1,5 @@
 class Link < ApplicationRecord
   has_many :reads
-  scope :hot_reads, -> {where(self.reads.count )}
 
   def self.hot_reads
     Link.joins(:reads)

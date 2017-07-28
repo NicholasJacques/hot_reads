@@ -7,8 +7,14 @@ class Api::V1::ReadsController < ApplicationController
     if @link.save
       render json: @link
     else 
-      ender json: @link.errors.full_messages, status: 500
+      render json: @link.errors.full_messages, status: 500
     end
+  end
+
+  def index
+    @links = Link.hot_reads
+
+    render json: @links
   end
 
   def link_params
