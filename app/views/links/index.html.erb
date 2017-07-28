@@ -1,1 +1,6 @@
 <h1>Hot Reads</h1>
+<%= if @links %>
+  <%= @links.each do |link| %>
+    <p><%= link.url %></p>
+  <% end %>
+<% end %>
